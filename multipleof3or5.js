@@ -8,7 +8,7 @@ const solution = (number) => {
   const array3 = [];
   const array5 = [];
   for (let i = 1; i < number; i++) {
-    if (3 * i < number && (3*i)%5 !== 0) {
+    if (3 * i < number && (3 * i) % 5 !== 0) {
       array3.push(3 * i);
     }
     if (5 * i < number) {
