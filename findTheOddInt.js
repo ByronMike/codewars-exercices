@@ -17,8 +17,10 @@ const findOdd = (A) => {
       let num = A[i];
       // checks if num exists as a key in the counts object.
       if (num in counts) {
+        // the corresponding value (which represents the count of occurrences of num) is incremented by 1.
         counts[num] += 1;
       } else {
+        // a new key-value pair is added to the dictionary where the key is num and the value is initialized to 1.
         counts[num] = 1;
       }
     }
