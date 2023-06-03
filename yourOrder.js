@@ -14,8 +14,8 @@ function order(words) {
     const splittedWords = words.split(" ");
   
     for (const word of splittedWords) {
-      const numbers = word.split("");
-      let filtered = numbers.filter((char) => !isNaN(parseInt(char)));
+      const letters = word.split("");
+      let filtered = letters.filter((char) => !isNaN(parseInt(char)));
       obj[word] = parseInt(filtered[0]);
     }
   
