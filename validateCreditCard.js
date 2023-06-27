@@ -15,24 +15,36 @@
 // Notes
 // You can see another examples in the "Sample tests".
 
-function meeting(s) {
-    let splitted = s.split(";");
-    console.log(splitted);
+function validate(n) {
+    let splitted = n.split(";");
     let arr = [];
+    
     for (const e of splitted) {
       let splitted2 = e.split(":");
-      console.log(splitted2[0].toUpperCase());
-      console.log(splitted2[1].toUpperCase());
       arr.push({
         firstname: splitted2[0].toUpperCase(),
         lastname: splitted2[1].toUpperCase(),
       });
     }
-    console.log(arr);
-    console.log(arr.sort((a, b) => a.lastname - b.lastname));
+  
+    arr.sort((a, b) => {
+      if (a.lastname === b.lastname) {
+        return a.firstname.localeCompare(b.firstname);
+      } else {
+        return a.lastname.localeCompare(b.lastname);
+      }
+    });
+  
+    let result = "";
+    for (const person of arr) {
+      result += `(${person.lastname}, ${person.firstname})`;
+    }
+  
+    return result;
   }
   
-  s =
-    "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill";
-  console.log(meeting(s));
+  let s = "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill";
+  console.log(validate(s));
+  
+
   
