@@ -7,32 +7,40 @@
 // If a string contains all repeating characters, it should return an empty string ("") or None -- see sample tests.
 
 function firstNonRepeatingLetter(s) {
-    let letterCount = {};
-    for (let letter of s) {
-      if (letter in letterCount) {
-        letterCount[`${letter}`] += 1;
-      } else if (letter.toLowerCase() in letterCount) {
-        letterCount[`${letter.toLowerCase()}`] += 1;
-      } else if (letter.toUpperCase() in letterCount) {
-        letterCount[`${letter.toUpperCase()}`] += 1;
-      } else {
-        letterCount[`${letter}`] = 1;
-      }
+  let letterCount = {};
+  for (let letter of s) {
+    if (letter in letterCount) {
+      letterCount[`${letter}`] += 1;
+    } else if (letter.toLowerCase() in letterCount) {
+      letterCount[`${letter.toLowerCase()}`] += 1;
+    } else if (letter.toUpperCase() in letterCount) {
+      letterCount[`${letter.toUpperCase()}`] += 1;
+    } else {
+      letterCount[`${letter}`] = 1;
     }
-    console.log(letterCount);
-    if((Object.values(letterCount)).every(e => e > 1) ){
-      return ""
-    }
-    const arr = []
-    for(const [key, value] of Object.entries(letterCount)){
-      if(value === 1){
-        return key
-      } 
-    }
-    console.log(arr)
   }
-  
-  const data = "sTreSS";
-  
-  console.log(firstNonRepeatingLetter(data));
-  
+  console.log(letterCount);
+  if (Object.values(letterCount).every((e) => e > 1)) {
+    return "";
+  }
+  const arr = [];
+  for (const [key, value] of Object.entries(letterCount)) {
+    if (value === 1) {
+      return key;
+    }
+  }
+  console.log(arr);
+}
+
+const data = "sTreSS";
+
+console.log(firstNonRepeatingLetter(data));
+
+// function firstNonRepeatingLetter(s) {
+//   for (var i in s) {
+//     if (s.match(new RegExp(s[i], "gi")).length === 1) {
+//       return s[i];
+//     }
+//   }
+//   return "";
+// }
