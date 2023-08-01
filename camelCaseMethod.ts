@@ -6,16 +6,12 @@
 // Don't forget to rate this kata! Thanks :)
 
 export function camelCase(str: string): string {
-    let arr = []
-    for(const element of str){
-        const splittedElement = element.split("")
-        const result = splittedElement.map(word=> word.slice(0).toUpperCase() + word.slice(1,word.length))
-        arr.push(result)
-    }
-    
-    console.log(arr)
-    return result; // your code here
-  }
+  const words = str.split(" "); // Split the input string into words
+  const capitalizedWords = words.map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase());
+  // Capitalize the first letter of each word and convert the rest to lowercase
+  
+  return capitalizedWords.join(""); // Join the words back together to form the camelCase string
+}
 
-const input: string = "hello case" 
-console.log(camelCase(input))
+const input: string = "hello case"; 
+console.log(camelCase(input)); // Output: "HelloCase"
