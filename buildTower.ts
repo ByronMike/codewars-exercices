@@ -1,46 +1,58 @@
+// Build Tower
 // Build a pyramid-shaped tower, as an array/list of strings, given a positive integer number of floors. A tower block is represented with "*" character.
 
 // For example, a tower with 3 floors looks like this:
 
 // [
 //   "  *  ",
-//   " *** ",
+//   " *** ", 
 //   "*****"
 // ]
 // And a tower with 6 floors looks like this:
 
 // [
-//   "     *     ",
-//   "    ***    ",
-//   "   *****   ", 3 : 5
-//   "  *******  ", 4 : 7
-//   " ********* ", 5 : 9
-//   "***********"  6 : 11
+//   "     *     ", 
+//   "    ***    ", 
+//   "   *****   ", 
+//   "  *******  ", 
+//   " ********* ", 
+//   "***********"
 // ]
 
+
+
+const repeatFunction = (n: number, arrName: string[], funct1: string, funct2: string) => {
+  for (let i = 0; i < n; i++) {
+    arrName[funct1](" ");
+    arrName[funct2](" ");
+  }
+};
+
 export const towerBuilder = (nFloors: number): string[] => {
-  let arr = [];
+  let arr: string[] = [];
+
   for (let i = nFloors; i >= 1; i--) {
-    console.log(i);
-    // n is the bottom
     const nTimes = i === 1 ? 1 : i + (i - 1);
     const stars = "*".repeat(nTimes);
-    const stage = `\"${stars}\"`;
-    const nb = i + i - 1;
-    console.log(stars);
-    console.log(stage);
-    console.log(nb);
+
     if (i === nFloors) {
-      arr.push(stage);
+      arr.push(stars);
     } else {
       const diff = nFloors - i;
-      const stagArr = stage.join("");
-      stage.splice(0, diff, " ");
+      const splittedStars = stars.split("");
+      repeatFunction(diff, splittedStars, "unshift", "push");
+      console.log(splittedStars)
+      const modifiedStars: string = splittedStars.join("");
+      console.log(modifiedStars)
+      arr.push(modifiedStars);
     }
   }
 
-  return;
+  return arr.reverse();
 };
 
-const floor = 6;
+
+
+
+const floor = 5;
 console.log(towerBuilder(floor));
