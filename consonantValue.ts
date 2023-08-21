@@ -14,12 +14,33 @@
 // More examples in test cases. Good luck!
 
 export function solve(s: string) {
+
+
+  
   let stringTableCorrespondance = {};
-  // for(let i = 1 ; i < 27 ; i++){
-  //     stringTableCorrespondance[`${}`] =
-  // }
-  console.log(parseInt("a", 16));
-  console.log(String.fromCharCode(49));
+  for(let i = 1 ; i < 27 ; i++){
+    const baseCharCode = 96
+    let updateCharCode = baseCharCode + i
+    let key = String.fromCharCode(updateCharCode)
+    let value = key.charCodeAt(0)
+      stringTableCorrespondance[`${key}`] = value - 95
+  }
+  console.log(stringTableCorrespondance)
+  console.log(String.fromCharCode(97));
+  console.log("a".charCodeAt(0))
+
+  const consonant = ["a","e","i","o","u"]
+  let consonantByPack = []
+
+  for(let i = 0; i < s.length; i++){
+    let arr = []
+    if(consonant.includes(s[i])){
+      arr.push(s[i])
+      
+    }
+    console.log(arr)
+  }
+
 }
 
 const data = "strength";
