@@ -35,7 +35,7 @@ export function solve(s: string) {
   for(let i = 0; i < s.length; i++){
     let arr = []
     if(consonant.includes(s[i])){
-      arr.push(s[i])
+      // arr.push(s[i])
       
     }
     console.log(arr)
