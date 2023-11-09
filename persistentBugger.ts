@@ -7,14 +7,22 @@
 // 4 --> 0 (because 4 is already a one-digit number)
 
 const digitsMultiplication = (digits: number): number => {
-    const arrOfDigits = digits.toString().split("").reduce((accumulator, currentValue) => (accumulator))
-    console.log(arrOfDigits)
-}
-console.log(digitsMultiplication(10))
+  const arrOfDigits = digits
+    .toString()
+    .split("")
+    .reduce((accumulator, currentValue) => accumulator * +currentValue, 1);
+  return arrOfDigits;
+};
 
 export function persistence(num: number): number {
-    
-   }
+  let count = 0;
 
-const number = 39
-console.log(persistence(number))
+  while (num > 9) {
+    num = digitsMultiplication(num);
+    count++;
+  }
+  return count
+}
+
+const number = 39;
+console.log(persistence(number));
