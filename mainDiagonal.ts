@@ -6,12 +6,12 @@
 //   [[1, 2, 3], [4, 5, 6], [7, 8, 9]] should return 45
 
 export function mainDiagonalProduct(mat: number[][]): number {
-    let elementsOfDiag : number[]  = [];
-    for (let i = 0; i < mat.length; i++) {
-      elementsOfDiag.push(mat[i][i]);
-    }
-    return elementsOfDiag.reduce((prev, current) => prev * current, 1); 
+  let elementsOfDiag: number[] = [];
+  for (let i = 0; i < mat.length; i++) {
+    elementsOfDiag.push(mat[i][i]);
   }
+  return elementsOfDiag.reduce((prev, current) => prev * current, 1);
+}
 
 const matrix = [
   [1, 2, 3],
