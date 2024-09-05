@@ -9,6 +9,7 @@
 // [1, 2, 1, 1, 3, 2] -> [1, 2, 3]
 
 const data = [1, 2, 1, 1, 3, 2];
+const data2 = [1, 1, 2] 
 
 export const distinct = (a: number[]): number[] => {
   let seen: Set<number> = new Set();
@@ -22,3 +23,4 @@ export const distinct = (a: number[]): number[] => {
 };
 
 console.log(distinct(data));
+console.log(distinct(data2))
