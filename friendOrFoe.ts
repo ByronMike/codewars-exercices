@@ -13,5 +13,5 @@ export function friend(friends: string[]): string[] {
   return friends.filter((e) => e.length === 4);
 }
 
-const data = ["Ryan", "Jimmy", "123", "4", "Cool Man", "tutu", "toto"];
+const data = ["Ryan", "Jimmy", "123", "4", "Cool Man", "tutu", "toto", "toutou"];
 console.log(friend(data));
