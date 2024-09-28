@@ -44,3 +44,5 @@ export function points(games: string[]): number {
 
   return points;
 }
+
+console.log(points(data));
