@@ -28,7 +28,7 @@ const data = [
   "3:2",
   "4:2",
   "4:3",
-  "5:3"
+  "5:4"
 ];
 export function points(games: string[]): number {
   let points = 0;
