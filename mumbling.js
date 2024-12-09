@@ -20,7 +20,7 @@ function accum(s) {
     // Convert characters other than the first to lowercase
     repeatedChar = repeatedChar.charAt(0) + repeatedChar.slice(1).toLowerCase();
 
-    // Add modified character to result array
+    // Add modified character to get the result array
     result.push(repeatedChar);
   }
 
