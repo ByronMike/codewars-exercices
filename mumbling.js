@@ -24,7 +24,7 @@ function accum(s) {
     result.push(repeatedChar);
   }
 
-  // Join the modified characters with dashes and return as a string
+  // Join the modified characters with dashes and return it as a string
   return result.join("-");
 }
 
