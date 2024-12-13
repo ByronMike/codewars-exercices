@@ -14,7 +14,7 @@ function accum(s) {
 
   // Loop through each character in the string
   for (let i = 0; i < str.length; i++) {
-    // Repeat the character i+1 times and add to array
+    // Repeat the character i+1 times and then add to array
     let repeatedChar = str[i].repeat(i + 1);
 
     // Convert characters other than the first to lowercase
